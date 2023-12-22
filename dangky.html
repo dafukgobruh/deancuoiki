@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Pachaku® - Popular StreetWear Brand
+        </title>
+        <link rel="stylesheet" href="">
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dokdo&display=swap" rel="stylesheet">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        :root {
+            --success-color:#2691d9;
+            --error-color: #e74c3c;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        li a {
+            text-decoration: none !important;
+            list-style: none !important;
+            color: black;
+        }
+        header  { 
+            display: flex !important;
+            justify-content: space-between !important;
+            padding: 0 50px !important;
+            height: 70px !important;
+            align-items: center !important;
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        header.sticky {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        header:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        .logo {
+            flex: 1;
+        }
+        .menu {
+            flex: 3;
+            display: flex;
+            text-decoration: none !important;
+            list-style: none !important;
+        }
+        .menu li {
+            padding: 0 12px;
+            position: relative;
+        }
+        .menu > li:hover .sub-menu {
+            visibility: visible;
+            top:30px;
+        }
+        .sub-menu {
+            position: absolute;
+            text-decoration: none;
+            width: 150px;
+            border: 1px solid #ccc;
+            padding: 10px 0 10px 20px;
+            visibility: hidden;
+            top: 50px;
+            transition: 0.5s;
+            list-style: none;
+        }
+        .sub-menu ul {
+            padding-left: 20px;
+        }
+        .sub-menu li {
+            margin: 4px;
+        }
+
+        .menu li a {
+            font-size: 16px;
+            font-weight: bold !important;
+            display: block;
+            line-height: 20px;
+        }
+        body {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 400px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+        }
+        .container h1 {
+            text-align: center;
+        }
+        .form-control {
+            width: 100%;
+        }
+        .form-control input {
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #adadad;
+        }
+        .form-control span {
+            position: absolute;
+            border-bottom: 3px solid var(--success-color);
+            left: 0;
+            top: 38px;
+            width: 0%;
+            transition: 0.3s;
+        }
+        .form-control input:focus ~ span {
+            width: 100%;
+        }
+        .form-control.error small {
+            color: var(--error-color);
+        }
+        .form-control.error input {
+            border-bottom: 2px solid var(--error-color);
+        }
+        .btn-submit {
+            width: 100%;
+            height: 50px;
+            border-radius: 2px;
+            border: none;
+            outline: none;
+            background: var(--success-color);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 25px 0;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            
+            background: #000;
+        }
+        .xxx:hover{
+            color: white;
+            background-color: #000;
+        }
+        .signup-link {
+            text-align: center;
+        }
+        .signup-link a {
+            color: var(--success-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .signup-link a:hover {
+            background: var(--success-color);
+        }
+        .logo2 {
+            padding-left: 20px;
+        }
+    </style>
+    <body>
+        
+        <header>
+            <div class="logo">
+                <a href="./index.html"><img src="./images/logo.jpg" sizes="12px""></a>
+            </div>
+            <div class="menu">
+                <li><a class="xxx" href="index.html">Shop</a>
+                    <ul class="sub-menu">
+                        <li><a href="./newarrival.html">New Arrival</a></li>
+                        <li><a href="./ao.html">T-Shirt</a></li>
+                        <li><a href="./quan.html">Pants</a></li>
+                        <li><a href="./aokhoac.html">Outter Wear</a></li>
+                    </ul>
+                </li>
+                
+                <li><a class="xxx" href="./about.html">About Us</a></li>
+                <li><a  class="xxx"href="./outfit.html">Outfit</a></li>
+                <li><a class="xxx"href="./contact.html">Contact</a></li>
+                <li><a class="xxx"href="feed.html">Tin tức - Thông báo</a></li>
+                <li><a class="xxx"href="./dangky.html">Đăng ký/Đăng nhập</a></li>
+                
+                
+            </div>
+            
+        </header>
+        <div class="container" >
+            <form action="">
+                <h1>Login Form</h1>
+            <div class="form-control ">
+                <input id="username" type="text" placeholder="Username">
+                <small></small>
+                <span></span>
+            </div>
+            <div class="form-control ">
+                <input id="email" type="text" placeholder="Email">
+                <small></small>
+                <span></span>
+            </div>
+
+            <div class="form-control ">
+                <input id="password" type="password" placeholder="Password">
+                <small></small>
+                <span></span>
+            </div>
+
+            <div class="form-control ">
+                <input id="confirm-password" type="password" placeholder="Confirm Password">
+                <small>
+                </small>
+                <span></span>
+            </div>
+
+            <button type="submit" class="btn-submit">Login</button>
+            <div class="signup-link"></div>
+            not a member ? <a href="#">Signup</a>
+            </form>
+       
+        </div>
+        <div class="logo2" >
+
+            
+            
+            <a href="./index.html"><img src="./images/logo.jpg" sizes="12px""></a>
+            <p></p>
+            <h6 style="font-size: 12px;">Pachaku® - Share your Style</h6>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="">
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dokdo&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        li a {
+            text-decoration: none;
+            list-style: none !important;
+            color: black;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+            height: 70px;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        header.sticky {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        header:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        .logo {
+            flex: 1;
+        }
+        .menu {
+            flex: 3;
+            display: flex;
+            text-decoration: none !important;
+            list-style: none !important;
+        }
+        .menu li {
+            padding: 0 12px;
+            position: relative;
+        }
+        .menu > li:hover .sub-menu {
+            visibility: visible;
+            top:30px;
+        }
+        .sub-menu {
+            position: absolute;
+            text-decoration: none;
+            width: 150px;
+            border: 1px solid #ccc;
+            padding: 10px 0 10px 20px;
+            visibility: hidden;
+            top: 50px;
+            transition: 0.5s;
+            list-style: none;
+        }
+        .sub-menu ul {
+            padding-left: 20px;
+        }
+        .sub-menu li {
+            margin: 4px;
+        }
+
+        .menu li a {
+            font-size: 16px;
+            font-weight: bold !important;
+            display: block;
+            line-height: 20px;
+        }
+        .others {
+            flex: 1;
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            font-size: 14px;
+        }
+        .others li {
+            padding: 0 12px;
+            position: relative;
+        }
+        .others > li::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 50%;
+            background: #dddddd;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .others > li:first-child::after {
+            display: none;
+        }
+        .others li:first-child {
+            position: relative;
+        }
+        .others li:first-child input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #333;
+            background: transparent;
+            outline: none;
+        }
+        .others li:first-child i {
+            position: absolute;
+            right: 10px;
+        }
+        .cart {
+            padding: 100px 0;
+        }
+        .cart-top-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cart-top {
+            height: 2px;
+            width: 70%;
+            background-color: #dddddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0 100px;
+        }
+        .cart-top-item {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #dddddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+        .cart-top-item i {
+            color: #dddddd;
+
+        }
+        .cart-top-cart {
+            border: 1px solid #0DB7EA;
+        }
+        .cart-top-cart i {
+            color: #0DB7EA;
+        }
+        .cart-content-left {
+            flex: 2;
+            padding-right: 12px;
+
+        }
+        .cart-content-left table {
+            width: 100%;
+            text-align: center;
+        }
+        .cart-content-left table th {
+            padding-bottom: 30px;
+            text-transform: uppercase;
+            color: #333;
+            font-size: 12px;
+            border-collapse: collapse;
+            border-bottom: 2px solid #dddddd;
+        }
+        .cart-content-left table p {
+            font-size: 12px;
+            color: #333;
+        }
+        .cart-content-left table th input {
+            width: 30px;
+        }
+        .cart-content-left table span {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #dddddd;
+            cursor: pointer;
+        }
+        .cart-content-left table td {
+            padding: 20px 0;
+            border-bottom: 2px solid #dddddd;
+        }
+        .cart-content-left td:first-child img {
+            width: 130px;
+        }
+        .cart-content-left td:nth-child(2) {
+            max-width: 130px;
+        }
+        .cart-content-left td:nth-child(3) img {
+            max-width: 130px;
+        }
+        .cart-content-right {
+            flex: 1;
+            padding-left: 12px;
+            border-left: 2px solid #dddddd ;
+        }
+        .cart-content-right table {
+            width: 100%;
+        }
+        .cart-content-right table th {
+            padding-bottom: 30px;
+            font-size: 12px;
+            color: #333;
+            border-collapse: collapse;
+            border-bottom: 2px solid #dddddd;
+        }
+        .cart-content-right table td {
+            font-size: 12px;
+            color: #333;
+            padding: 6px 0;
+        }
+        .cart-content-right tr:nth-child(4) {
+            border-bottom: 2px solid #dddddd;
+        }
+        .cart-content-right tr td:last-child {
+            text-align: right;
+        }
+        .cart-content-right-text {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .cart-content-right-text p {
+            font-size: 12px;
+            color: #333;
+        }
+        .cart-content-right-button {
+            text-align: center;
+            align-items: center;
+        }
+        .cart-content-right-button button {
+            padding: 0 18px;
+            height: 35px;
+            cursor: pointer;
+        }
+        .cart-content-right-button button:first-child {
+            background-color: #fff;
+            border: 1px solid black;
+            margin-right: 20px;
+        }
+        .cart-content-right-button button:first-child:hover {
+            background-color: #ddd;
+        }
+        .cart-content-right-button button:last-child {
+            background-color: black;
+            color: #fff;
+            border: none;
+            border: 1px solid black;
+        }
+        .cart-content-right-button button:last-child:hover {
+            background-color: #dddddd;
+            color: black;
+        }
+        .cart-content-right-dangnhap {
+            font-size: 12px;
+            color: #333;
+        }
+        .xxx:hover{
+            color: white;
+            background-color: #000;
+        }
+        .gio{
+            text-decoration: none;
+            color: #000;
+        }
+        .thanh{
+            text-decoration: none;
+            color: white;
+        }
+        .thanh:hover{
+            text-decoration: none;
+            color:#000;
+        }
+    </style>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="./index.html"><img src="./images/logo.jpg" sizes="12px""></a>
+            </div>
+            <div class="menu">
+                <li><a class="xxx" href="index.html">Shop</a>
+                    <ul class="sub-menu">
+                        <li><a href="./newarrival.html">New Arrival</a></li>
+                        <li><a href="./ao.html">T-Shirt</a></li>
+                        <li><a href="./quan.html">Pants</a></li>
+                        <li><a href="./aokhoac.html">Outter Wear</a></li>
+                    </ul>
+                </li>
+                
+                <li><a class="xxx" href="./about.html">About Us</a></li>
+                <li><a  class="xxx"href="./outfit.html">Outfit</a></li>
+                <li><a class="xxx"href="./contact.html">Contact</a></li>
+                <li><a class="xxx"href="feed.html">Tin tức - Thông báo</a></li>
+                <li><a class="xxx"href="./dangky.html">Đăng ký/Đăng nhập</a></li>
+                
+                
+            </div>
+            <div class="others">
+                <li>
+                    <input placeholder="Tìm kiếm" type="text">
+                    <i class="bi bi-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    </i>
+                </li>
+                <li><a class="fa fa-paw" href=""></a></li>
+                <li>
+                    <a class="bi bi-person" href="./dangky.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"/>
+                    </svg></a>
+                </li>
+                <li>
+                    <a class="bi bi-bag" href="./giohang.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                        </svg>
+                    </a>
+                </li>
+            </div>
+        </header>
+
+        <section class="cart">
+            <div class="container2">
+                <div class="cart-top-wrap">
+                    <div class="cart-top">
+                        <div class="cart-top-cart cart-top-item">
+                            <a href="./giohang.html" class="bi bi-bag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                            </svg></a>
+                        </div>
+                        <div class="cart-top-address cart-top-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                            </svg>
+                        </div>
+                        <div class="cart-top-payment cart-top-item">
+                            <a href="thanhtoan.html" class="bi bi-cash-coin">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
+                                <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                                <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
+                                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                            </svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="cart-content row">
+                    <div class="cart-content-left">
+                        <table>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Tên Sản phẩm</th>
+                                <th>Color</th>
+                                <th>Size</th>
+                                <th>SL</th>
+                                <th>Thành tiền</th>
+                                <th>Xoá</th>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/giohang1.webp" alt=""></td>
+                                <td><p>Pachaku® Blank Regular Fit Tee/ Black</p></td>
+                                <td><img src="images/blackcolor.jpg"></td>
+                                <td>L</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td><p>3.000.000 <sup>đ</sup></p></td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/giohang2.webp" alt=""></td>
+                                <td><p>Pachaku® Blank Regular Fit Tee/ Black</p></td>
+                                <td><img src="./images/whitecolor.jpg"></td>
+                                <td>L</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td><p>3.500.000 <sup>đ</sup></p></td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/giohang3.webp" alt=""></td>
+                                <td><p>Pachaku® Blank Regular Fit Tee/ Black</p></td>
+                                <td><img src="./images/whitecolor.jpg"></td>
+                                <td>L</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td><p>3.500.000 <sup>đ</sup></p></td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/giohang4.webp" alt=""></td>
+                                <td><p>Pachaku® Blank Regular Fit Tee/ Black</p></td>
+                                <td><img src="./images/blackcolor.jpg"></td>
+                                <td>L</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td><p>5.999.999 <sup>đ</sup></p></td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/giohang5.webp" alt=""></td>
+                                <td><p>Pachaku® Blank Regular Fit Tee/ Black</p></td>
+                                <td><img src="./images/bluenhatcolor.jpg"></td>
+                                <td>L</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td><p>5.999.999 <sup>đ</sup></p></td>
+                                <td>X</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="cart-content-right">
+                        <table>
+                            <tr>
+                                <th colspan="2">TỔNG TIỀN GIỎ HÀNG</th>
+                            </tr>
+                            <tr>
+                                <td>TỔNG SẢN PHẨM</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>TỔNG TIỀN HÀNG</td>
+                                <td><p>7.000.000 <sub>đ</sub></p></td>
+                            </tr>
+                            <tr>
+                                <td>TẠM TÍNH</td>
+                                <td><p style="color: black; font-weight: bold;">7.000.000 <sub>đ</sub></p></td>
+                            </tr>
+                        </table>
+                        <div class="cart-content-right-text">
+                            <p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn trị giá hơn 10.000.000đ</p>
+                        </div>
+                        <div class="cart-content-right-button">
+                            <button><a class="gio" href="ao.html">TIẾP TỤC MUA SẮM</a></button>
+                            <button><a href="thanhtoan.html" class="thanh"  >THANH TOÁN</a></button>
+                        </div>
+                        <div class="cart-content-right-dangnhap">
+                            <p>TÀI KHOẢN</p>
+                            <p>Hãy <a href="dangky.html">Đăng nhập</a> tài khoản của bạn để tích điểm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>

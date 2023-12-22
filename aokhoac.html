@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Pachaku® - Popular StreetWear Brand
+    </title>
+    
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            
+        }
+        .xxx:hover{
+            color: white;
+            background-color: #000;
+        }
+        #wrapper{
+            max-width: 1170px;
+            margin: 0px auto;
+        }
+        h3{
+            font-size:18px ;
+            color: #111;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border: 1px solid #bebebe;
+            display: inline-block;
+            color: #555;
+            font-weight: 600;
+        }
+        body{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.15;
+            
+        }
+        .headline{
+            text-align: center;
+            margin: 40px 0px;
+
+        }
+        ul.products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style-type: none;
+        }
+        ul.products li{
+            flex-basis: 25%;
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+
+        }
+        ul.products li img{
+            max-width: 100%;
+            height: auto;
+        }
+        ul.products li .product-info a{
+            display: block;
+            text-decoration: none;
+
+        }
+        ul.products li .product-info a.product-cat{
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 3px 0px ;
+            color: #9e9e9e;
+        }
+        ul.products li .product-info a.product-name{
+            color: #334862;
+            padding: 3px 0px;
+            font-size: 20px;
+
+        }
+        ul.products li .product-info .product-price{
+            padding: 2px 0px;
+            font-weight: 600;
+            color: orangered;
+            font-size: 15px;
+
+
+        }
+        ul.products li.product-info{
+            padding: 10px 0px;
+        }
+        ul.products li .product-top{
+            position: relative;
+            overflow: hidden;
+
+        }
+        ul.products li .product-top a.mua-ngay{
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            background-color: #446084;
+            color: #fff;
+            padding: 10px 0px;
+            position: absolute;
+            width: 100%;
+            position: absolute;
+            bottom: -38px;
+            transition: 0.25s ease-in-out;
+            opacity: 0.9;
+
+    
+        }
+        ul.products li .product-top .product-thumb img{
+            display: block;
+        }
+        ul.products li .product-top .product-thumb {
+            display: block;
+        }
+        ul.products li:hover a.mua-ngay{
+            bottom: 0px;
+        }
+        ul.products li:hover .product-top .product-thumb img{
+            filter: opacity(80%);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        li a {
+            text-decoration: none;
+            list-style: none !important;
+            color: black;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+            height: 70px;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        header.sticky {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        header:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        .logo {
+            flex: 1;
+        }
+        .menu {
+            flex: 3;
+            display: flex;
+            text-decoration: none !important;
+            list-style: none !important;
+        }
+        .menu li {
+            padding: 0 12px;
+            position: relative;
+        }
+        .menu > li:hover .sub-menu {
+            visibility: visible;
+            top:30px;
+        }
+        .sub-menu {
+            position: absolute;
+            text-decoration: none;
+            width: 150px;
+            border: 1px solid #ccc;
+            padding: 10px 0 10px 20px;
+            visibility: hidden;
+            top: 50px;
+            transition: 0.5s;
+            list-style: none;
+        }
+        .sub-menu ul {
+            padding-left: 20px;
+        }
+        .sub-menu li {
+            margin: 4px;
+        }
+
+        .menu li a {
+            font-size: 16px;
+            font-weight: bold !important;
+            display: block;
+            line-height: 20px;
+        }
+        .others {
+            flex: 1;
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            font-size: 14px;
+        }
+        .others li {
+            padding: 0 12px;
+            position: relative;
+        }
+        .others > li::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 50%;
+            background: #dddddd;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .others > li:first-child::after {
+            display: none;
+        }
+        .others li:first-child {
+            position: relative;
+        }
+        .others li:first-child input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #333;
+            background: transparent;
+            outline: none;
+        }
+        .others li:first-child i {
+            position: absolute;
+            right: 10px;
+        }
+        .feedback img {
+            width: 440px;
+            height: 440px;
+            padding: 20px;
+            justify-content: center;
+            position: relative;
+        }
+        .logo2 {
+            padding-left: 20px;
+        }
+</style>
+        <header>
+    <div class="logo">
+        <a href="./index.html"><img src="./images/logo.jpg" sizes="12px""></a>
+    </div>
+    <div class="menu">
+        <li><a class="xxx" href="index.html">Shop</a>
+            <ul class="sub-menu">
+                <li><a href="./newarrival.html">New Arrival</a></li>
+                <li><a href="./ao.html">T-Shirt</a></li>
+                <li><a href="./quan.html">Pants</a></li>
+                <li><a href="./aokhoac.html">Outter Wear</a></li>
+            </ul>
+        </li>
+        
+        <li><a class="xxx" href="./about.html">About Us</a></li>
+        <li><a  class="xxx"href="./outfit.html">Outfit</a></li>
+        <li><a class="xxx"href="./contact.html">Contact</a></li>
+        <li><a class="xxx"href="feed.html">Tin tức - Thông báo</a></li>
+        <li><a class="xxx"href="./dangky.html">Đăng ký/Đăng nhập</a></li>
+        
+        
+    </div>
+    <div class="others">
+        <li>
+            <input placeholder="Tìm kiếm" type="text">
+            <i class="bi bi-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+            </i>
+        </li>
+        <li><a class="fa fa-paw" href=""></a></li>
+        <li>
+            <a href="./dangky.html" class="bi bi-person">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"/>
+            </svg></a>
+        </li>
+        <li>
+            <a class="bi bi-bag" href="./giohang.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
+            </a>
+        </li>
+    </div>
+</header>
+    </style>
+     <div id="wrap">
+        <div  class="headline" style="padding-top: 30px;">
+            <h3>Sản phẩm bán chạy</h3>
+        </div>
+        <ul class="products">
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/04903e6f0acb638ff9922f10e4e337f0.jpg"  width="250px" height="400px">
+                            
+                            
+                        </a> 
+                        <a href="aokhoac1.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                       
+                        
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Khoác Bomber Pilot Oversized Jacket Symbolic</a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/0fd586b584393257011a52fc1c5b2c7a.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac2.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Sweater ECOCHIC PLEATCRAFT Local Brand Unisex </a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/19a506f44ca8cc5d5b5b0f312c84e3fc.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac3.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Khoác Nam Unisex Cổ Đứng Vải Dù 2 Lớp Phối Màu RESUAPRE</a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/19ea926b6ab2274bf8cee7f256d7b191.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac4.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Khoác Nhung Dày Dáng Rộng Phong Cách  </a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/965af48bfc4d1381a283322818c9dcc9.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac5.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Khoác Bomber Nhung Tăm Cổ Bẻ Kiểu Trơn</a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/cn-11134207-7qukw-ljds5tba9abe0e.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac6.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Jacket Unisex Levents Sporty/ Baby Red</a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/sg-11134201-22100-ofqvv2itguivb5.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac7.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Khoác Nam Kaki Gắn Logo STYLE HÀN Cao Cấp Thời Trang Thu Đông</a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/sg-11134201-7rbmz-lm712yh7jsgga4.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="/aokhoac8.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Phao "BURGUNDY PUFFER" Chần Bông 24oz Màu Xanh Dương</a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/vn-11134207-7qukw-lgngk4511alvcd.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac9.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Hoodie Local Brand Unisex Teelab Worldwide Studio Collection HD059</a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/vn-11134207-7qukw-lk7ya90yuaic7e.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac10.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Khoác Da Thời Trang Nam Cổ Vest Pigofashion Zadn10</a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/vn-11134207-7r98o-llfwhsx6l7ew8b.jpg" width="187px" height="100px">
+                        </a>
+                        <a href="daokhoac11.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Khoác Nam Cao Cấp SUPER FASHION Vải Dù 2 Lớp </a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="#" class="product-thumb">
+                            <img src="./images/vn-11134207-7r98o-llxrp3mhgk4f7a.jpg" width="250px" height="400px">
+                        </a>
+                        <a href="aokhoac12.html" class="mua-ngay">Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Áo Khoác</a>
+                        <a href="" class="product-name">Áo Khoác Cardigan Kẻ Phối Cúc Ngọc UNDERCOOL Sang chảnh </a>
+                        <div class="product-price">6.999.999<sup>đ</sup></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="logo2">
+        <a href="./index.html"><img src="./images/logo.jpg" sizes="12px"></a>
+        <p></p>
+        <h6 style="font-size: 12px;">Pachaku® - Share your Style</h6>
+    </div>
+</body>
+</html>
